@@ -24,4 +24,10 @@ public class ApplicationService {
     public Application saveApplication(Application application){
         return repository.save(application);
     }
+
+    public Application getApplicationById(Long id){
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Application not found"));
+
+        //If an application exists with this ID, give it to me. Otherwise, throw an exception
+    }
 }

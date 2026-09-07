@@ -1,23 +1,103 @@
 # Job Application Tracker API
 
-A RESTful backend application built with Spring Boot to manage and track job applications.
+A backend REST API built with Spring Boot to manage and track job applications.
 
-The project is being developed incrementally to understand how a production-style Spring Boot backend is designed, rather than building the entire application at once.
+This project is being developed as a portfolio-grade backend project to learn and demonstrate practical backend engineering concepts including REST APIs, layered architecture, PostgreSQL, JPA/Hibernate, validation, exception handling, testing, security, and deployment.
 
-## Tech Stack
+---
+
+## 🚧 Project Status
+
+Currently under development.
+
+### Completed
+
+- [x] Spring Boot project setup
+- [x] Maven project setup
+- [x] PostgreSQL database integration
+- [x] JPA/Hibernate configuration
+- [x] Application entity
+- [x] Repository layer
+- [x] Service layer
+- [x] Controller layer
+- [x] Create job application
+- [x] Get all job applications
+- [x] Get application by ID
+- [x] PostgreSQL persistence
+- [x] REST Client API testing
+
+### Upcoming
+
+- [ ] Update job application
+- [ ] Delete job application
+- [ ] Input validation
+- [ ] Proper exception handling
+- [ ] DTOs
+- [ ] Pagination
+- [ ] Filtering and sorting
+- [ ] Search
+- [ ] User authentication
+- [ ] JWT-based authorization
+- [ ] Unit and integration testing
+- [ ] Docker
+- [ ] React frontend
+- [ ] Deployment
+
+---
+
+## 🎯 Project Goal
+
+The application allows users to manually record and manage the jobs they have applied for.
+
+Example information stored for each application:
+
+- Company
+- Position
+- Location
+- Application status
+- Application date
+- Job URL
+- Notes
+
+The goal is to eventually turn this into a complete full-stack application with a React frontend and a deployed Spring Boot backend.
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
 
 - Java 21
-- Spring Boot 4.1.1
+- Spring Boot
 - Spring Web
 - Spring Data JPA
 - Hibernate
-- PostgreSQL 18
 - Maven
-- VS Code
+- PostgreSQL
 
-## Project Architecture
+### Development & Testing
 
-The application follows a layered architecture:
+- Visual Studio Code
+- REST Client
+- PostgreSQL / pgAdmin
+- Git & GitHub
+
+### Planned
+
+- Spring Security
+- JWT
+- JUnit
+- Mockito
+- Docker
+- React
+- Vercel
+- Cloud deployment
+
+---
+
+## 🏗️ Architecture
+
+The backend follows a layered architecture:
 
 ```text
 Controller
@@ -29,20 +109,3 @@ Repository
 JPA / Hibernate
     ↓
 PostgreSQL
-
-
-
-
-
-## explanations:-
-The service contains the business logic. 
-The controller should only receive HTTP requests and return HTTP responses
-
-Controller layer-->This is the layer where the application starts interacting with HTTP requests
-Repository--> Responsible for communicating with the database
-
-## To check:
-
-Dependency Injection
-Beans
-Hibernate

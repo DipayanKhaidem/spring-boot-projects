@@ -1,3 +1,18 @@
-//Get all job applications
-GET http://localhost:8080/api/applications
+###Get all job applications
+GET http://localhost:8080/api/applications/1
 Accept: application/json
+
+
+###Create a job application
+POST http://localhost:8080/api/applications
+Content-Type: application/json 
+
+{
+    "company":"Google",
+    "position":"Software Engineer",
+    "location":"Bangalore",
+    "status":"APPLIED",
+    "appliedDate":"2026-09-07",
+    "jobUrl":"https://example.com",
+    "notes":"Applied through company site"
+}
