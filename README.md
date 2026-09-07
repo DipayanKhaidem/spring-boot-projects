@@ -29,3 +29,20 @@ Repository
 JPA / Hibernate
     ↓
 PostgreSQL
+
+
+
+
+
+## explanations:-
+The service contains the business logic. 
+The controller should only receive HTTP requests and return HTTP responses
+
+Controller layer-->This is the layer where the application starts interacting with HTTP requests
+Repository--> Responsible for communicating with the database
+
+## To check:
+
+Dependency Injection
+Beans
+Hibernate

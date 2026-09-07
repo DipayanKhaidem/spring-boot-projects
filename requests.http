@@ -1,0 +1,3 @@
+//Get all job applications
+GET http://localhost:8080/api/applications
+Accept: application/json
