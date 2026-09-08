@@ -6,44 +6,42 @@ This project is being developed as a portfolio-grade backend project to learn an
 
 ---
 
-## 🚧 Project Status
+## Project Structure
 
-Currently under development.
+```text
+jobtracker/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── dipayan/
+│       │           └── jobtracker/
+│       │               ├── controller/
+│       │               │   └── ApplicationController.java
+│       │               │
+│       │               ├── service/
+│       │               │   └── ApplicationService.java
+│       │               │
+│       │               ├── repository/
+│       │               │   └── ApplicationRepository.java
+│       │               │
+│       │               ├── entity/
+│       │               │   └── Application.java
+│       │               │
+│       │               ├── exception/
+│       │               │   ├── ApplicationNotFoundException.java
+│       │               │   └── GlobalExceptionHandler.java
+│       │               │
+│       │               └── JobtrackerApplication.java
+│       │
+│       └── resources/
+│           └── application.properties
+│
+├── requests.http
+├── pom.xml
+└── README.md
 
-### Completed
 
-- [x] Spring Boot project setup
-- [x] Maven project setup
-- [x] PostgreSQL database integration
-- [x] JPA/Hibernate configuration
-- [x] Application entity
-- [x] Repository layer
-- [x] Service layer
-- [x] Controller layer
-- [x] Create job application
-- [x] Get all job applications
-- [x] Get application by ID
-- [x] PostgreSQL persistence
-- [x] REST Client API testing
-
-### Upcoming
-
-- [ ] Update job application
-- [ ] Delete job application
-- [ ] Input validation
-- [ ] Proper exception handling
-- [ ] DTOs
-- [ ] Pagination
-- [ ] Filtering and sorting
-- [ ] Search
-- [ ] User authentication
-- [ ] JWT-based authorization
-- [ ] Unit and integration testing
-- [ ] Docker
-- [ ] React frontend
-- [ ] Deployment
-
----
 
 ## 🎯 Project Goal
 
@@ -95,17 +93,69 @@ The goal is to eventually turn this into a complete full-stack application with 
 
 ---
 
-## 🏗️ Architecture
+
+### Architecture
+
+Your architecture section can now say:
+
+```markdown
+## Architecture
 
 The backend follows a layered architecture:
 
-```text
 Controller
-    ↓
+↓
 Service
-    ↓
+↓
 Repository
-    ↓
-JPA / Hibernate
-    ↓
+↓
+JPA/Hibernate
+↓
 PostgreSQL
+
+### Responsibilities
+
+**Controller**
+- Handles HTTP requests and responses
+- Maps API endpoints
+- Passes requests to the service layer
+
+**Service**
+- Contains application/business logic
+- Coordinates operations between controllers and repositories
+- Handles application lookup and update/delete logic
+
+**Repository**
+- Provides database access through Spring Data JPA
+- Uses `JpaRepository` for CRUD operations
+
+**Exception Layer**
+- Contains custom application exceptions
+- Provides centralized exception handling through `@RestControllerAdvice`
+
+## API Endpoints
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| POST | `/api/applications` | Create a job application | ✅ |
+| GET | `/api/applications` | Get all applications | ✅ |
+| GET | `/api/applications/{id}` | Get application by ID | ✅ |
+| PUT | `/api/applications/{id}` | Update an application | ✅ |
+| DELETE | `/api/applications/{id}` | Delete an application | ✅ |
+
+## Exception Handling
+
+The API uses a custom exception and global exception handler for handling missing applications.
+
+### Custom Exception
+
+`ApplicationNotFoundException` is thrown when an application with the requested ID does not exist.
+
+### Global Exception Handler
+
+`GlobalExceptionHandler` uses `@RestControllerAdvice` to handle application-specific exceptions across the API.
+
+For example:
+
+```http
+GET /api/applications/999
