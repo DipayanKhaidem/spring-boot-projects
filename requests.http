@@ -16,3 +16,20 @@ Content-Type: application/json
     "jobUrl":"https://example.com",
     "notes":"Applied through company site"
 }
+
+###Update a job application
+PUT http://localhost:8080/api/applications/1
+Content-Type: application/json
+
+{
+    "company":"Google",
+    "position":"Software Engineer",
+    "location":"Bangalore",
+    "status":"INTERVIEW",
+    "appliedDate":"2026-09-07",
+    "jobUrl":"https://example.com",
+    "notes":"Passed OA and scheduled for interview"
+}
+
+###Delete an application
+DELETE http://localhost:8080/api/applications/1
